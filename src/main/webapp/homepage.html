@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>iBill - Invoice Generator</title>
+	<style>
+		body{
+			font-family:'Arial',sans-serif;
+			margin:0;
+			padding:0;
+			background-color:white;
+			color:#333;
+			line-height:1.6;
+		}
+		.navbar{
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+			padding:20px 40px;
+			background-color:white;
+			box-shadow:0 2px 10px rgba(0,0,0,0.3);
+		}
+		.logo{
+			font-size:50px;
+			font-weight:bold;
+			color:#4849BD;
+			font-family:'Aclonica',sans-serif;
+		}
+		.nav-links{
+			display:flex;
+			gap:30px;
+			font-family:'Shrikhand',cursive;
+			font-size:24px;
+			color:#4849BD;
+		}
+		.nav-links a{
+			color:#4849BD;
+			text-decoration:none;
+			font-size:24px;
+			font-weight:normal;
+		}
+		.content-box{
+			top:56%;
+			left:50%;
+			position:absolute;
+			transform:translate(-50%,-50%);
+			padding:50px;
+			background-color:#4849BD;
+			border-radius:20px;
+			box-shadow:0 2px 10px rgba(0,0,0,0.05);
+			color:white;
+			display:flex;
+			height:auto;
+			width:1300px;
+			align-items:center;
+		}
+		.left{
+			flex:1;
+			text-align:left;
+			padding-right:30px;
+		}
+		.main{
+			font-family:'Kalam',cursive;
+			font-size:80px;
+			color:white;
+			margin-bottom:20px;
+		}
+		.des{
+			font-family:'Playfair Display',serif;
+			font-size:18px;
+			line-height:1.6;
+			margin-bottom:30px;
+		}
+		h1{
+			color:#4849BD;
+			font-size:70px;
+			margin-bottom:10px;
+			font-family:'Kalam',cursive;
+		}
+		h2{
+			font-size:24px;
+			margin-bottom:25px;
+			color:#333;
+			font-weight:normal;
+		}
+		p{
+			font-size:16px;
+			margin-bottom:30px;
+			line-height:1.6;
+		}
+		.divider{
+			border-top:1px solid #eee;
+			margin:30px auto;
+			width:100px;
+		}
+		.cta-button{
+			background-color:white;
+			color:#4849BD;
+			padding:12px 25px;
+			font-family:'Shrikhand',cursive;
+			text-decoration:none;
+			border-radius:8px;
+			font-size:16px;
+			transition:0.3s;
+			font-weight:bold;
+		}
+		.cta-button:hover{
+			background-color:#e2e2ff;
+		}
+		.right{
+			flex:1;
+			text-align:right;
+		}
+		.right img{
+			max-width:800px;
+			height:495px;
+			width:600px;
+			border-radius:100px;
+			border-fit:fit;
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Poetsen+One&family=Shrikhand&family=Sigma+One&display=swap" rel="stylesheet">
+</head>
+<body>
+	<nav class="navbar">
+		<div class="logo">iBill</div>
+		<div class="nav-links">
+			<a href="homepage.html">Home</a>
+			<a href="getstarted.html">Get Started</a>
+			<a href="signup.html">Login/Signup</a>
+		</div>
+	</nav>
+	<section class="content-box">
+		<div class="left">
+			<h1 class="main">Invoice Generator</h1>
+			<p class="des">
+				Build Generator helps you create powerful, structured recipe or project builds in just a few clicks. Whether you're a student working on academic tasks, a developer organizing components, or a creative enthusiast planning step-by-step workflows — our easy-to-use interface makes it effortless. No technical skills required. Just choose your options, customize your details, and generate your perfect build instantly.
+			</p>
+			<button class="cta-button">Try it for free</button>
+		</div>
+		<div class="right">
+			<img src="iconbill1.jpg" alt="Bill icon">
+		</div>
+	</section>
+	<script>
+		document.querySelectorAll('.nav-links a').forEach(link=>{
+			if(!link.textContent.includes('Home')){
+				link.addEventListener('click',function(e){
+					e.preventDefault();
+					window.location.href='signup.html';
+				});
+			}
+		});
+		document.querySelector('.cta-button').addEventListener('click',function(){
+			window.location.href='signup.html';
+		});
+	</script>
+</body>
+</html>

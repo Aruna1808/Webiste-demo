@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice - iBill</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            padding: 30px;
+            background-color: white;
+        }
+        h2 {
+            text-align: center;
+            color: #4849BD;
+            font-family: 'Marck Script', cursive;
+            font-size: 40px;
+        }
+        .details {
+            margin-bottom: 20px;
+        }
+        .details p {
+            margin: 4px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4849BD;
+            color: white;
+        }
+        .totals {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .thankyou {
+            margin-top: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #4849BD;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>{BUSINESS_NAME}</h2>
+
+    <div class="details">
+        <p><strong>Address:</strong> {BUSINESS_ADDRESS}</p>
+        <p><strong>Email:</strong> {BUSINESS_EMAIL}</p>
+        <p><strong>Phone:</strong> {BUSINESS_PHONE}</p>
+        <p><strong>Date:</strong> {INVOICE_DATE}</p>
+    </div>
+
+    <div class="details">
+        <p><strong>Bill To:</strong> {CUSTOMER_NAME}</p>
+        <p><strong>Address:</strong> {CUSTOMER_ADDRESS}</p>
+        <p><strong>Email:</strong> {CUSTOMER_EMAIL}</p>
+        <p><strong>Phone:</strong> {CUSTOMER_PHONE}</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {ITEM_ROWS}
+        </tbody>
+    </table>
+
+    <div class="totals">
+        <p><strong>Subtotal:</strong> Rs. {SUBTOTAL}</p>
+        <p><strong>Tax:</strong> Rs. {TAX}</p>
+        <p><strong>Grand Total:</strong> Rs. {GRAND_TOTAL}</p>
+    </div>
+
+    <div class="thankyou">
+        THANK YOU FOR YOUR PURCHASE!!
+    </div>
+
+</body>
+</html>

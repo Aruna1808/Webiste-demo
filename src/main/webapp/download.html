@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Download Invoice - iBill</title>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Poetsen+One&family=Shrikhand&family=Sigma+One&display=swap" rel="stylesheet">
+	<style>
+		body{
+			font-family:'Arial',sans-serif;
+			margin:0;
+			padding:0;
+			background-color:white;
+			color:#333333;
+		}
+		.navbar{
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+			padding:20px 40px;
+			background-color:white;
+			box-shadow:0 2px 10px rgba(0,0,0,0.3);
+		}
+		.logo{
+			font-size:50px;
+			font-weight:bold;
+			color:#4849BD;
+			font-family:'Aclonica',sans-serif;
+		}
+		.nav-links{
+			display:flex;
+			gap:30px;
+			font-family:'Shrikhand',cursive;
+			font-size:24px;
+		}
+		.nav-links a{
+			color:#4849BD;
+			text-decoration:none;
+			font-weight:normal;
+		}
+		.content-box{
+			position:absolute;
+			top:56%;
+			left:50%;
+			transform:translate(-50%,-50%);
+			padding:50px;
+			background-color:#4849BD;
+			border-radius:20px;
+			box-shadow:0 2px 10px rgba(0,0,0,0.05);
+			color:white;
+			display:flex;
+			flex-direction:column;
+			align-items:center;
+			width:600px;
+		}
+		h1{
+			font-family:'Kalam',cursive;
+			font-size:45px;
+			margin-bottom:20px;
+		}
+		.description{
+			font-family:'Playfair Display',serif;
+			font-size:18px;
+			text-align:center;
+			margin-bottom:30px;
+		}
+		.download-btn{
+			background-color:white;
+			color:#4849BD;
+			padding:12px 30px;
+			font-family:'Shrikhand',cursive;
+			font-size:18px;
+			border-radius:25px;
+			text-decoration:none;
+			font-weight:bold;
+		}
+		.download-btn:hover{
+			background-color:#e2e2ff;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+		<div class="logo">iBill</div>
+		<div class="nav-links">
+			<a href="homepage.html">Home</a>
+			<a href="getstarted.html">Get Started</a>
+			<a href="profile.html">Profile</a>
+		</div>
+	</nav>
+	<section class="content-box">
+		<h1>Your Invoice is Ready!</h1>
+		<p class="description">Click the button below to download your invoice document.</p>
+		<a id="downloadLink" class="download-btn" href="#" download>Download Invoice</a>
+	</section>
+	<script>
+		fetch("GetInvoicePathServlet")
+			.then(res=>{
+				if(!res.ok){
+					throw new Error("No invoice found");
+				}
+				return res.text();
+			})
+			.then(path=>{
+				if(path){
+					const link=document.getElementById("downloadLink");
+					link.href=path;
+					link.download="";
+				}else{
+					document.querySelector(".content-box").innerHTML="<h2>No invoice found.</h2>";
+				}
+			})
+			.catch(err=>{
+				console.error(err);
+				document.querySelector(".content-box").innerHTML="<h2>Something went wrong. Please try again.</h2>";
+			});
+	</script>
+</body>
+</html>

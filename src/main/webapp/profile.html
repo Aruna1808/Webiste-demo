@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Profile - iBill</title>
+	<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Aclonica&display=swap" rel="stylesheet">
+	<style>
+		body{
+			font-family:Arial,sans-serif;
+			margin:0;
+			padding:0;
+			background:white;
+		}
+		.navbar{
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+			padding:20px 40px;
+			background-color:white;
+			box-shadow:0 2px 10px rgba(0,0,0,0.2);
+		}
+		.logo{
+			font-size:40px;
+			color:#4849BD;
+			font-family:'Aclonica',sans-serif;
+		}
+		.nav-links{
+			display:flex;
+			gap:30px;
+			font-family:'Shrikhand',cursive;
+			font-size:20px;
+		}
+		.nav-links a{
+			color:#4849BD;
+			text-decoration:none;
+		}
+		.profile-content{
+			padding:40px;
+			max-width:800px;
+			margin:auto;
+		}
+		h2{
+			color:#4849BD;
+		}
+		ul{
+			padding-left:20px;
+		}
+		ul li{
+			margin:10px 0;
+		}
+		a.download-link{
+			color:#333;
+			text-decoration:underline;
+		}
+		.logout-btn{
+			color:red;
+			font-weight:bold;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+		<div class="logo">iBill</div>
+		<div class="nav-links">
+			<a href="homepage.html">Home</a>
+			<a href="getstarted.html">Get Started</a>
+			<a href="LogoutServlet" class="logout-btn">Logout</a>
+		</div>
+	</nav>
+	<section class="profile-content">
+		<h2 id="user-email">Welcome!</h2>
+		<h3>Your Invoices:</h3>
+		<ul id="invoice-list"></ul>
+	</section>
+	<script>
+		fetch('ProfileServlet')
+			.then(response=>response.json())
+			.then(data=>{
+				document.getElementById("user-email").innerText=`Welcome, ${data.email}`;
+				const list=document.getElementById("invoice-list");
+				if(data.invoices.length===0){
+					list.innerHTML="<li>No invoices found.</li>";
+				}else{
+					data.invoices.forEach(path=>{
+						const filename=path.split("/").pop();
+						const li=document.createElement("li");
+						li.innerHTML=`<a class="download-link" href="${path}" download>${filename}</a>`;
+						list.appendChild(li);
+					});
+				}
+			});
+	</script>
+</body>
+</html>

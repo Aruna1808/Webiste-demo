@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>iBill Login</title>
+<style>
+	body{
+		font-family:'Arial',sans-serif;
+		margin:0;
+		padding:0;
+		background-color:white;
+		color:#333;
+		line-height:1.6;
+	}
+	.navbar{
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		padding:20px 40px;
+		background-color:white;
+		box-shadow:0 2px 10px rgba(0,0,0,0.3);
+	}
+	.logo{
+		font-size:50px;
+		font-weight:bold;
+		color:#4849BD;
+		font-family:'Aclonica',sans-serif;
+	}
+	.nav-links{
+		display:flex;
+		gap:30px;
+		font-family:'Shrikhand',cursive;
+		font-size:24px;
+	}
+	.nav-links a{
+		color:#4849BD;
+		text-decoration:none;
+	}
+	.content-box{
+		position:absolute;
+		top:56%;
+		left:50%;
+		transform:translate(-50%,-50%);
+		padding:40px;
+		background-color:#4849BD;
+		border-radius:20px;
+		box-shadow:0 2px 10px rgba(0,0,0,0.05);
+		color:white;
+		display:flex;
+		height:auto;
+		width:90%;
+		max-width:1300px;
+		align-items:center;
+	}
+	.left{
+		flex:1;
+		padding-right:30px;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		align-items:center;
+	}
+	.left h2.main{
+		font-family:'Kalam',cursive;
+		font-size:60px;
+		margin-bottom:15px;
+	}
+	input[type="email"],
+	input[type="password"]{
+		width:400px;
+		padding:12px 20px;
+		margin-bottom:15px;
+		border:none;
+		border-radius:25px;
+		font-size:14px;
+		font-family:'Arial',sans-serif;
+	}
+	label{
+		align-self:flex-start;
+		padding-left:5px;
+		margin-bottom:3px;
+		font-size:20px;
+		font-family:'Playfair Display',cursive;
+	}
+	.right{
+		flex:1;
+		text-align:right;
+	}
+	.right img{
+		max-width:100%;
+		height:auto;
+		border-radius:20px;
+	}
+	.cta-button{
+		background-color:black;
+		color:white;
+		padding:8px 25px;
+		font-family:'Playfair Display',cursive;
+		border:none;
+		border-radius:25px;
+		font-size:16px;
+		font-weight:bold;
+		cursor:pointer;
+		margin-top:10px;
+	}
+	.cta-button:hover{
+		background-color:#333;
+	}
+	.left a{
+		color:black;
+	}
+	.auth-form p{
+		margin-top:10px;
+		font-size:14px;
+	}
+	.auth-form a{
+		color:#cdd8ff;
+		text-decoration:none;
+		margin-left:4px;
+	}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Poetsen+One&family=Shrikhand&family=Sigma+One&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar">
+	<div class="logo">iBill</div>
+	<div class="nav-links">
+		<a href="homepage.html">Home</a>
+		<a href="getstarted.html">Get Started</a>
+		<a href="signup.html">Login/Signup</a>
+	</div>
+</nav>
+<section class="content-box">
+	<div class="left">
+		<h2 class="main">Login to your account</h2>
+		<form action="LoginServlet" method="post" class="auth-form">
+			<label for="email">Email</label><br>
+			<input type="email" id="email" name="email" required><br>
+			<label for="password">Password</label><br>
+			<input type="password" id="password" name="password" required><br>
+			<div style="text-align:center;">
+				<button class="cta-button" type="submit">Login</button>
+			</div>
+		</form>
+		<p>Don't have an account?<a href="signup.html">Sign up here</a></p>
+	</div>
+	<div class="right">
+		<img src="iconbill1.jpg" alt="Bill icon">
+	</div>
+</section>
+</body>
+</html>

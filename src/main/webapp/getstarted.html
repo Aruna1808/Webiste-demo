@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Get Started - iBill</title>
+	<link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Poetsen+One&family=Playfair+Display&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+	<style>
+		body{
+			margin:0;
+			padding:0;
+			font-family:'Arial',sans-serif;
+			background-color:white;
+		}
+		.navbar{
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+			padding:30px 60px;
+			background-color:white;
+			font-family:'Poetsen One',sans-serif;
+			flex-wrap:wrap;
+			box-shadow:0 2px 10px rgba(0,0,0,0.3);
+		}
+		.logo{
+			font-size:36px;
+			color:#4849BD;
+			font-family:'Aclonica',sans-serif;
+		}
+		.nav-links{
+			display:flex;
+			gap:40px;
+			font-size:22px;
+		}
+		.nav-links a{
+			text-decoration:none;
+			color:#4849BD;
+		}
+		.content-box{
+			background-color:#4849BD;
+			width:90%;
+			max-width:1100px;
+			margin:50px auto;
+			padding:5%;
+			border-radius:30px;
+			color:white;
+			display:flex;
+			flex-direction:column;
+			align-items:center;
+			box-sizing:border-box;
+		}
+		.cta-button{
+			background-color:white;
+			color:black;
+			font-family:'Playfair Display',serif;
+			font-size:18px;
+			padding:14px 30px;
+			border-radius:30px;
+			border:none;
+			cursor:pointer;
+			font-weight:bold;
+			margin-bottom:40px;
+		}
+		.cta-button:hover{
+			background-color:#eee;
+		}
+		.content-box h2{
+			font-family:'Poetsen One',cursive;
+			font-size:32px;
+			font-weight:normal;
+			margin:0;
+		}
+		.instructions{
+			display:flex;
+			
+		}
+		@media(max-width:600px){
+			.cta-button{
+				font-size:16px;
+				font-family:'Marck Script',cursive;
+				padding:10px 20px;
+			}
+			.content-box h2{
+				font-size:24px;
+				text-align:center;
+			}
+			.nav-links{
+				flex-direction:column;
+				gap:10px;
+				font-size:18px;
+				margin-top:15px;
+			}
+			.navbar{
+				padding:20px;
+				text-align:center;
+			}
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+		<div class="logo">iBill</div>
+		<div class="nav-links">
+			<a href="homepage.html">Home</a>
+			<a href="getstarted.html">Get Started</a>
+			<a href="profile.html">Profile</a>
+		</div>
+	</nav>
+	<section class="content-box">
+		<a href="generatebill.html">
+			<button class="cta-button">Generate your invoice here!</button>
+		</a>
+		<h2>How to use?</h2>
+		<div class="instructions">
+			  <ol style="font-family:'Playfair Display', serif; font-size:18px; line-height:1.8;">
+			    <li><strong>Sign up</strong> or <strong>log in</strong> to your iBill account to securely access and manage your invoices.</li>
+			    <li>Click the <strong>“Generate your invoice here!”</strong> button to open the invoice creation form.</li>
+			    <li><strong>Enter your business details</strong> including name, email, address, country, and phone number.</li>
+			    <li><strong>Fill in customer details</strong> such as name, email, address, and phone number (if applicable).</li>
+			    <li>Add one or more <strong>items with quantity, rate, and tax percentage</strong> as needed.</li>
+			    <li>Review the <strong>calculated subtotal and total</strong> amounts displayed below the item section.</li>
+			    <li>Click the <strong>“Generate Document”</strong> button to create your invoice.</li>
+			    <li>Your invoice will be available for <strong>download</strong> and stored in your <strong>Profile</strong> for future access.</li>
+			    <li>Visit the <strong>Profile page</strong> anytime to view or download your previously created invoices.</li>
+			  </ol>
+</div>
+
+	</section>
+</body>
+</html>
